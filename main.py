@@ -50,11 +50,12 @@ root = Tk()
 root.title("Paint")
 
 w = Canvas(root, width=c.WIDTH, height=c.HEIGHT, bg=c.BG_COLOR)
+w.bind("<1>", active_paint)
 eraser_icon = load_image('eraser.png')
 increase_icon = load_image('inbrush.png')
 decrease_icon = load_image('debrush.png')
 brush_icon = load_image('brush.png')
-eraser_btn = Button(image=eraser_icon, command=lambda: color_change(c.DEFAULT_COLOR))  # 111111
+eraser_btn = Button(image=eraser_icon, command=lambda: color_change("#ffffff"))  # 111111
 decrease_btn = Button(image=decrease_icon, command=decrease_brush_size)
 increase_btn = Button(image=increase_icon, command=increase_brush_size)
 brush_btn = Button(image=brush_icon, command=lambda: color_change(c.DEFAULT_COLOR))
